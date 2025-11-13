@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "12kkkk.github.io/repeat_learning/",
-    ignorePatterns: ["private", "templates", ".obsidian","docs/plugins/CustomOrgImages.md"],
+    ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
