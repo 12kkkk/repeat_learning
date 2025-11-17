@@ -24,12 +24,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout Site Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0 # 获取所有历史记录，这对 Quartz 很有用
 
       - name: Checkout Content Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: 12kkkk/obsidian_git_for_website # ！！！修改这里 ！！！
           token: ${{ secrets.ACCESS_TOKEN }}
@@ -42,7 +42,7 @@ jobs:
           find content -name ".DS_Store" -delete
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: 'npm'
@@ -54,7 +54,7 @@ jobs:
         run: npx quartz build
 
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
